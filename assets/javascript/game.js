@@ -45,15 +45,19 @@ document.onkeyup = function(event) {
     if(chance == 0){
         lossNum+=1;
         losses.innerHTML = lossNum;
-        return;
         alert("you ran out of chances!");
+        return;
     }
     correctness = false;
     var keyP = event.key;
-    for( i=0; i<names_to_guess.length; i++){
+    for( i=0; i<namewanted.length; i++){
+        console.log(keyP);
         if( keyP === nameWantedArray[i] ){
+            console.log(i);
+            //console.log(nameWantedArray);
             word_blanks_str_array[0+2*i]=keyP;
             word_blanks_str = word_blanks_str_array.join("");
+            console.log(word_blanks_str);
             correctness = true;
         }
     }
